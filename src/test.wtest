@@ -1,0 +1,50 @@
+import personas.*
+import spa.*
+
+test "Spa - Olivia - Concentracion" {
+	spa.atender(olivia)
+	olivia.discutir()
+	olivia.discutir()
+	spa.atender(olivia)
+	assert.equals(13, olivia.gradoDeConcentracion())
+}
+
+test "Spa - Bruno - Esta perfecto" {
+	spa.atender(bruno)
+	bruno.correr()
+	bruno.mediodiaEnCasa()
+	bruno.darBanoDeVapor()
+	spa.atender(bruno)
+	bruno.tomarAgua()
+	assert.equals(true,bruno.estaPerfecto())
+}
+
+test "Spa - Bruno - No esta perfecto" {
+	spa.atender(bruno)
+	bruno.correr()
+	bruno.mediodiaEnCasa()
+	bruno.darBanoDeVapor()
+	spa.atender(bruno)
+	assert.equals(false,bruno.estaPerfecto())
+}
+
+test "Spa - Bruno - Peso" {
+	spa.atender(bruno)
+	bruno.correr()
+	bruno.mediodiaEnCasa()
+	bruno.comerFideos()
+	assert.equals(54.7, bruno.peso())
+}
+
+test "Spa - Ramiro - Contractura.Piel Grasosa" {
+	ramiro.diaDeTrabajo()
+	spa.atender(ramiro)
+	ramiro.comerHamburguesa()
+	ramiro.jugarAlPaddle()
+	ramiro.bajarALaFosa()
+	spa.atender(ramiro)
+	ramiro.bajarALaFosa()
+	ramiro.darBanoDeVapor()
+	assert.equals(1,ramiro.contractura())
+	assert.equals(false,ramiro.pielGrasosa())
+}
